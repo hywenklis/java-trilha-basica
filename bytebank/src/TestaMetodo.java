@@ -31,5 +31,9 @@ public class TestaMetodo {
         }
         System.out.println("Novo valor da conta2: R$" + conta2.saldo);
         System.out.println("Novo valor da conta1: R$" + conta.saldo);
+
+
+        conta.titular = "Paulo silveira";
+        System.out.println(conta.titular);
     }
 }
