@@ -6,8 +6,6 @@ public class TesteReferencias {
         gerente.setNome("Marcos");
         gerente.setSalario(5000.00);
 
-        Funcionario funcionario = new Funcionario();
-        funcionario.setSalario(2000.00);
 
         EditorVideo editorVideo = new EditorVideo();
         editorVideo.setSalario(2500.00);
@@ -17,7 +15,6 @@ public class TesteReferencias {
 
         ControleBonificacao controle = new ControleBonificacao();
         controle.registra(gerente);
-        controle.registra(funcionario);
         controle.registra(editorVideo);
         controle.registra(designer);
 

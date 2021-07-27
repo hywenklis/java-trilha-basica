@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/bytebank-composto/bytebank-composto.iml" filepath="$PROJECT_DIR$/bytebank-composto/bytebank-composto.iml" />
       <module fileurl="file://$PROJECT_DIR$/bytebank-encapsulado/bytebank-encapsulado.iml" filepath="$PROJECT_DIR$/bytebank-encapsulado/bytebank-encapsulado.iml" />
       <module fileurl="file://$PROJECT_DIR$/bytebank-herdado/bytebank-herdado.iml" filepath="$PROJECT_DIR$/bytebank-herdado/bytebank-herdado.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bytebank-herdado-conta/bytebank-herdado-conta.iml" filepath="$PROJECT_DIR$/bytebank-herdado-conta/bytebank-herdado-conta.iml" />
       <module fileurl="file://$PROJECT_DIR$/sintaxe-basica/sintaxe-basica.iml" filepath="$PROJECT_DIR$/sintaxe-basica/sintaxe-basica.iml" />
       <module fileurl="file://$PROJECT_DIR$/sintaxe-variaveis-e-fluxo/sintaxe-variaveis-e-fluxo.iml" filepath="$PROJECT_DIR$/sintaxe-variaveis-e-fluxo/sintaxe-variaveis-e-fluxo.iml" />
     </modules>
