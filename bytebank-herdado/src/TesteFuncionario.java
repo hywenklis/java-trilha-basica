@@ -2,13 +2,13 @@ public class TesteFuncionario {
 
     public static void main(String[] args) {
 
-        Funcionario funcionario = new Gerente();
+        Gerente herbert = new Gerente();
 
-        funcionario.setNome("Hywenklis Rherbert");
-        funcionario.setCpf("222.222.222-22");
-        funcionario.setSalario(2600.00);
+        herbert.setNome("Hywenklis Rherbert");
+        herbert.setCpf("222.222.222-22");
+        herbert.setSalario(2600.00);
 
-        System.out.println(funcionario.getNome());
-        System.out.println(funcionario.getBonificacao());
+        System.out.println(herbert.getNome());
+        System.out.println(herbert.getBonificacao());
     }
 }
