@@ -17,28 +17,8 @@ public class Pessoa {
         this.altura = altura;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setDataNascimento(String dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
-
     public String getDataNascimento() {
         return dataNascimento;
-    }
-
-    public void setAltura(double altura) {
-        this.altura = altura;
-    }
-
-    public double getAltura() {
-        return altura;
     }
 
     public void dadosPessoa()  {
