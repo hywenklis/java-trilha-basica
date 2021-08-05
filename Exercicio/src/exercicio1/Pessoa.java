@@ -21,7 +21,7 @@ public class Pessoa {
         return dataNascimento;
     }
 
-    public void dadosPessoa()  {
+    public void dadosPessoa() {
         System.out.println("Nome: " + nome);
         System.out.println("Data de Nascimento: " + dataNascimento);
         System.out.println("Altura: " + altura);
@@ -33,8 +33,9 @@ public class Pessoa {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate aniversario = LocalDate.parse(getDataNascimento(), formatter);
         final LocalDate dataAtual = LocalDate.now();
-        final Period periodo = Period.between(aniversario,dataAtual);
+        final Period periodo = Period.between(aniversario, dataAtual);
 
         System.out.println("Idade: " + periodo.getYears() + " Anos");
     }
+
 }
