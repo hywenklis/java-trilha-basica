@@ -5,11 +5,11 @@ import com.br.bytebank.banco.modelo.ContaCorrente;
 
 import java.util.ArrayList;
 
-public class Teste {
+public class TesteArrayList {
 
     public static void main(String[] args) {
 
-        ArrayList lista = new ArrayList();
+        ArrayList<Conta> lista = new ArrayList<Conta>();
 
         Conta cc = new ContaCorrente(22,11);
         lista.add(cc);
@@ -30,7 +30,7 @@ public class Teste {
             System.out.println(lista.get(i));
         }*/
 
-        for(Object conta : lista) {
+        for(Conta conta : lista) {
             System.out.println(conta);
         }
     }
