@@ -37,4 +37,9 @@ public class Cliente {
     public void setProfissao(String profissao) {
         this.profissao = profissao;
     }
+
+    @Override
+    public String toString() {
+        return "Nome: " + super.toString();
+    }
 }
