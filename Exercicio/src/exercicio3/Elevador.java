@@ -1,11 +1,8 @@
 package exercicio3;
 
-public class Elevador {
+import java.util.ArrayList;
 
-    // Armazenar o andar atual (terreo = 0)
-    // Total de andares no prédio (desconsiderando o térreo)
-    // Capacidade do elevador e quantas pessoas estão presentes nele
-    // Encapsular todos os atributos da classe (criar os métodos set e get).
+public class Elevador {
 
     public void inicializa() {
 

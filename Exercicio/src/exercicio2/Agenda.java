@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Agenda {
-    private  List<Pessoa> pessoas = new ArrayList<>();
+    private  List<Pessoa> pessoas = new ArrayList<>(10);
     private BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
     public List<Pessoa> getPessoas() {
@@ -34,18 +34,22 @@ public class Agenda {
         }
 
         if (pessoaASerRemovida != null) {
-            this.pessoas.remove(pessoaASerRemovida);
+            pessoas.remove(pessoaASerRemovida);
         }
         System.out.println(pessoaASerRemovida.getNome() + " Removido da lista");
     }
     public void criarPessoa() throws IOException {
-        System.out.print("Informe o nome: ");
-        String nome = br.readLine();
-        System.out.print("Informe o ano de nascimento: ");
-        int anonasc = Integer.parseInt(br.readLine());
-        System.out.print("Informe a altura: ");
-        float altura = Float.parseFloat(br.readLine());
-        adicionarPessoa(nome, anonasc, altura);
+        if (pessoas.size() == 10) {
+            System.out.println("Lista Cheia");
+        } else {
+            System.out.print("Informe o nome: ");
+            String nome = br.readLine();
+            System.out.print("Informe o ano de nascimento: ");
+            int anonasc = Integer.parseInt(br.readLine());
+            System.out.print("Informe a altura: ");
+            float altura = Float.parseFloat(br.readLine());
+            adicionarPessoa(nome, anonasc, altura);
+        }
     }
 
     public void listarPessoasCadastradas() {
@@ -105,4 +109,5 @@ public class Agenda {
         System.out.println("Sistema finalizado!");
         br.close();
     }
+
 }
