@@ -1,4 +1,4 @@
-package com.br.bytebank.banco.util;
+package com.br.bytebank.banco.teste.util;
 
 public class TesteOutrosWrapper {
 

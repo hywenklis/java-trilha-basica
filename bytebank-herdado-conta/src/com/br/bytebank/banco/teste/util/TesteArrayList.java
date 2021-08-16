@@ -1,4 +1,4 @@
-package com.br.bytebank.banco.util;
+package com.br.bytebank.banco.teste.util;
 
 import com.br.bytebank.banco.modelo.Conta;
 import com.br.bytebank.banco.modelo.ContaCorrente;

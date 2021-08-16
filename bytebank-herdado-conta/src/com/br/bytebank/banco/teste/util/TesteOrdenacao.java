@@ -1,4 +1,4 @@
-package com.br.bytebank.banco.util;
+package com.br.bytebank.banco.teste.util;
 
 import com.br.bytebank.banco.modelo.Cliente;
 import com.br.bytebank.banco.modelo.Conta;
@@ -6,10 +6,8 @@ import com.br.bytebank.banco.modelo.ContaCorrente;
 import com.br.bytebank.banco.modelo.ContaPoupanca;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.function.Consumer;
 
 public class TesteOrdenacao {
 

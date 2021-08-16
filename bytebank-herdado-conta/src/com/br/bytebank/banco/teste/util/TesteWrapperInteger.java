@@ -1,4 +1,4 @@
-package com.br.bytebank.banco.util;
+package com.br.bytebank.banco.teste.util;
 
 import java.util.ArrayList;
 import java.util.List;
