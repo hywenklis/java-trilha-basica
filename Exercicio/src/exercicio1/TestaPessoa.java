@@ -6,7 +6,6 @@ public class TestaPessoa {
 
         Pessoa pessoa = new Pessoa("Hywenklis", "18/10/1997", 170.0);
         pessoa.dadosPessoa();
-
     }
 
 }

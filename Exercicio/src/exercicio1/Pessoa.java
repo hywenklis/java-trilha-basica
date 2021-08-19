@@ -6,32 +6,12 @@ import java.time.format.DateTimeFormatter;
 
 public class Pessoa {
 
-    private String nome;
-    private String dataNascimento;
-    private double altura;
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public void setDataNascimento(String dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
+    private final String nome;
+    private final String dataNascimento;
+    private final double altura;
 
     public String getDataNascimento() {
         return dataNascimento;
-    }
-
-    public double getAltura() {
-        return altura;
-    }
-
-    public void setAltura(double altura) {
-        this.altura = altura;
     }
 
     public Pessoa(String nome, String dataNascimento, double altura) {

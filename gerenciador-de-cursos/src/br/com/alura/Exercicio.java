@@ -15,9 +15,7 @@ public class Exercicio {
 
         Collections.sort(cursos);
 
-        cursos.forEach(curso -> {
-            System.out.println(curso);
-        });
+        cursos.forEach(System.out::println);
 
         cursos.remove(1);
 

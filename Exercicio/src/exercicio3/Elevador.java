@@ -8,34 +8,29 @@ public class Elevador {
 
     private int capacidadeElevador;
     private int totalAndares;
-    private int terreo = 0;
+    private final int terreo = 0;
     private int andarAtual;
-    private int ultimoAndar;
-    private List<Pessoa> pessoas = new ArrayList<>(2);
+    private final List<Pessoa> pessoas = new ArrayList<>(2);
 
     Scanner scan = new Scanner(System.in);
-
-    public List<Pessoa> getPessoas() {
-        return pessoas;
-    }
 
     public int getCapacidadeElevador() {
         return capacidadeElevador;
     }
 
-    /* Recebe como parêmtro capacidade do elevador e total de andares no prédio,
-                os elevadores sempre começa no terreo e vazio.
-        */
     public void inicializa(int capacidadeElevador, int totalAndares) {
         this.capacidadeElevador = capacidadeElevador;
         this.totalAndares = totalAndares;
 
+        System.out.println("------------------ELEVADOR---------------------");
         entra();
+        System.out.println("------------------------------------------------");
         subirEDesce();
+        System.out.println("------------------------------------------------");
     }
 
     public void entra() {
-        // para acrescentar uma pessoa no elevador (só deve acrescentar se ainda houver espaço);
+
         System.out.println("Apenas 2 pessoas podem entrar no elevador...");
         do {
             System.out.println("Informe seu nome para entrar: ");
@@ -69,12 +64,6 @@ public class Elevador {
     }
 
     public void subirAndar() {
-        /*if(andarAtual < totalAndares) {
-            System.out.println("Subiu andar!");
-            andarAtual++;
-        } else {
-            System.out.println("Não pode subir ");
-        }*/
 
         while (andarAtual < totalAndares) {
             System.out.println("Subiu andar");
@@ -85,7 +74,7 @@ public class Elevador {
     }
 
     public void desceAndar() {
-        // para descer um andar (não deve descer se já estiver no térreo)
+
         while (andarAtual != terreo) {
             System.out.println("Desceu o andar!");
             andarAtual--;
@@ -100,7 +89,7 @@ public class Elevador {
             subirAndar();
 
             do {
-                System.out.println("Deseja descer o andar ou sair do elevador");
+                System.out.println("Deseja [DESCER] o andar ou [SAIR] do elevador ?");
                 String descerAndar = scan.nextLine().toUpperCase();
 
                 if (descerAndar.equals("DESCER")) {
@@ -115,8 +104,10 @@ public class Elevador {
 
                         if(sair.equals("S")) {
                             sai();
-                        } else {
+                        } else if (andarAtual == terreo){
                             subirAndar();
+                        } else {
+                            desceAndar();
                         }
                     }
 

@@ -18,14 +18,6 @@ public class Pessoa {
         return this.nome;
     }
 
-    public int getAnonasc() {
-        return this.anonasc;
-    }
-
-    public float getAltura() {
-        return this.altura;
-    }
-
     public int getIdade() {
         return LocalDate.now().getYear() - this.anonasc;
     }

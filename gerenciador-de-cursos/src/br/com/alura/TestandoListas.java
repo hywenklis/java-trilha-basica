@@ -29,8 +29,8 @@ public class TestandoListas {
         String primeiraAula = aulas.get(0);
         System.out.println("A primeira aula é " + primeiraAula);
 
-        for(int i = 0; i < aulas.size(); i++) {
-            System.out.println("Aula : " + aulas.get(i));
+        for (String s : aulas) {
+            System.out.println("Aula : " + s);
         }
 
         System.out.println(aulas.size());
@@ -45,9 +45,7 @@ public class TestandoListas {
 
         Collections.sort(aulas);
         System.out.println("Depois de Ordenado:");
-        aulas.forEach(aula -> {
-            System.out.println(aula);
-        });
+        aulas.forEach(System.out::println);
 
     }
 }

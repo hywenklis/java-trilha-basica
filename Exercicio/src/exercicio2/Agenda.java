@@ -5,10 +5,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Agenda {
-    private  List<Pessoa> pessoas = new ArrayList<>(10);
-    private BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    private final List<Pessoa> pessoas = new ArrayList<>(10);
+    private final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
     public List<Pessoa> getPessoas() {
         return this.pessoas;
@@ -36,7 +37,7 @@ public class Agenda {
         if (pessoaASerRemovida != null) {
             pessoas.remove(pessoaASerRemovida);
         }
-        System.out.println(pessoaASerRemovida.getNome() + " Removido da lista");
+        System.out.println(Objects.requireNonNull(pessoaASerRemovida).getNome() + " Removido da lista");
     }
     public void criarPessoa() throws IOException {
         if (pessoas.size() == 10) {
@@ -77,7 +78,7 @@ public class Agenda {
     }
 
     public void menu() throws IOException {
-        int opcaoSelecionada = 0;
+        int opcaoSelecionada;
         do {
             System.out.println("--------------MENU----------------- ");
             System.out.println("0. Terminar");
