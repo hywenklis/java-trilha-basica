@@ -27,6 +27,7 @@ public class Elevador {
         System.out.println("------------------------------------------------");
         subirEDesce();
         System.out.println("------------------------------------------------");
+        scan.close();
     }
 
     public void entra() {
