@@ -1,5 +1,8 @@
 package br.com.alura;
 
+import java.util.Iterator;
+import java.util.Set;
+
 public class TestaCursoComAluno {
 
     public static void main(String[] args) {
@@ -17,6 +20,12 @@ public class TestaCursoComAluno {
         javaColecoes.matricula(a1);
         javaColecoes.matricula(a2);
         javaColecoes.matricula(a3);
+
+        Set<Aluno> alunos = javaColecoes.getAlunos();
+        Iterator<Aluno> iterator = alunos.iterator();
+        while (iterator.hasNext()) {
+            iterator.next();
+        }
 
         System.out.println("Todos os alunos matriculados: ");
         javaColecoes.getAlunos().forEach(System.out::println);
