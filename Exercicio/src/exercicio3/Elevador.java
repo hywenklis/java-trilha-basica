@@ -8,7 +8,7 @@ public class Elevador {
 
     private int capacidadeElevador;
     private int totalAndares;
-    private final int terreo = 0;
+    private static final int terreo = 0;
     private int andarAtual;
     private final List<Pessoa> pessoas = new ArrayList<>(2);
 
@@ -86,38 +86,38 @@ public class Elevador {
     public void subirEDesce() {
         System.out.println("Para subir digite [S]: ");
         String subirAndar = scan.nextLine().toUpperCase();
-        if (subirAndar.equals("S") && andarAtual != totalAndares) {
-            subirAndar();
+        if (!subirAndar.equals("S") || andarAtual == totalAndares) {
+            return;
+        }
+        subirAndar();
 
-            do {
-                System.out.println("Deseja [DESCER] o andar ou [SAIR] do elevador ?");
-                String descerAndar = scan.nextLine().toUpperCase();
+        do {
+            System.out.println("Deseja [DESCER] o andar ou [SAIR] do elevador ?");
+            String descerAndar = scan.nextLine().toUpperCase();
 
-                if (descerAndar.equals("DESCER")) {
-                    desceAndar();
+            if (descerAndar.equals("DESCER")) {
+                desceAndar();
+            }
 
+            if (andarAtual == terreo) {
 
-                } if(andarAtual == terreo) {
+                while (!pessoas.isEmpty()) {
+                    System.out.println("Deseja sair? [S] ou [N]");
+                    String sair = scan.nextLine().toUpperCase();
 
-                    while (pessoas.size() != 0) {
-                        System.out.println("Deseja sair? [S] ou [N]");
-                        String sair = scan.nextLine().toUpperCase();
-
-                        if(sair.equals("S")) {
-                            sai();
-                        } else if (andarAtual == terreo){
-                            subirAndar();
-                        } else {
-                            desceAndar();
-                        }
+                    if (sair.equals("S")) {
+                        sai();
+                    } else if (andarAtual == terreo) {
+                        subirAndar();
+                    } else {
+                        desceAndar();
                     }
-
-                } else if (descerAndar.equals("SAIR")) {
-                    sai();
                 }
 
-            } while (pessoas.size() != 0);
-        }
+            } else if (descerAndar.equals("SAIR")) {
+                sai();
+            }
 
+        } while (!pessoas.isEmpty());
     }
 }
