@@ -6,8 +6,8 @@ import java.time.LocalDate;
 
 public class Funcionario {
 
-    private String nome;
-    private LocalDate dataAdmissao;
+    private final String nome;
+    private final LocalDate dataAdmissao;
     private BigDecimal salario;
 
     public Funcionario(String nome, LocalDate dataAdmissao, BigDecimal salario) {
@@ -29,6 +29,11 @@ public class Funcionario {
     }
 
     public void reajustar(BigDecimal reajuste) {
-        this.salario = this.salario.add(reajuste).setScale(2, RoundingMode.HALF_UP);
+        this.salario = this.salario.add(reajuste);
+        arredondar();
+    }
+
+    private void arredondar() {
+        this.salario = this.salario.setScale(2, RoundingMode.HALF_UP);
     }
 }
