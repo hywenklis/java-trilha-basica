@@ -26,7 +26,7 @@ public class Agenda {
 
     public void remover(String nome) {
         Pessoa pessoaASerRemovida = null;
-        for (Pessoa pessoa : this.pessoas) {
+        for (Pessoa pessoa : pessoas) {
             if (pessoa.getNome().equals(nome)) {
                 pessoaASerRemovida = pessoa;
                 break;
@@ -54,9 +54,7 @@ public class Agenda {
     }
 
     public void listarPessoasCadastradas() {
-        for (Pessoa pessoa : getPessoas()) {
-            System.out.println(pessoa.toString());
-        }
+        pessoas.forEach(System.out::println);
     }
 
     public void imprimirPessoaPeloIndice() throws IOException {
@@ -80,7 +78,7 @@ public class Agenda {
     public void menu() throws IOException {
         int opcaoSelecionada;
         do {
-            System.out.println("--------------MENU----------------- ");
+            System.out.println("--------------AGENDA----------------- ");
             System.out.println("0. Terminar");
             System.out.println("1. Adicionar pessoa");
             System.out.println("2. Listar pessoas cadastradas");

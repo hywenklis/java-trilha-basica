@@ -1,12 +1,6 @@
 package exercicio5;
 
-public class Pluviometro {
-
-    private String tipo;
-
-    public Pluviometro(String tipo) {
-
-    }
-
-    public String getTipo() {return tipo; }
+public abstract class Pluviometro {
+    int quantidadePluviometro = 0;
+    double capacidadePluviometro = 0;
 }

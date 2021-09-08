@@ -10,7 +10,7 @@ public class Elevador {
     private int totalAndares;
     private static final int terreo = 0;
     private int andarAtual;
-    private final List<Pessoa> pessoas = new ArrayList<>(2);
+    private final List<Pessoa> pessoas = new ArrayList<>();
 
     Scanner scan = new Scanner(System.in);
 
@@ -25,9 +25,7 @@ public class Elevador {
         System.out.println("------------------ELEVADOR---------------------");
         entra();
         System.out.println("------------------------------------------------");
-        subirEDesce();
-        System.out.println("------------------------------------------------");
-        scan.close();
+        operandoElevador();
     }
 
     public void entra() {
@@ -42,7 +40,7 @@ public class Elevador {
     }
 
     public void sai() {
-        System.out.print("Informe o nome da pessoa a ser removida: ");
+        System.out.print("Informe seu nome para sair: ");
         String nome = scan.nextLine();
         remove(nome);
     }
@@ -59,7 +57,7 @@ public class Elevador {
             pessoas.remove(pessoaASerRemovida);
             System.out.println(pessoaASerRemovida.getNome() + " Saiu do elevador!");
         } else {
-            System.out.println("Não existe essa pessoa no elevador");
+            System.out.println("O nome dessa pessoa não esta na lista do elevador.");
         }
 
     }
@@ -71,7 +69,7 @@ public class Elevador {
             andarAtual++;
         }
         System.out.println("você chegou no ultimo andar!");
-
+        System.out.println("--------------------------------");
     }
 
     public void desceAndar() {
@@ -81,43 +79,43 @@ public class Elevador {
             andarAtual--;
         }
         System.out.println("Você está no Térreo");
+        System.out.println("--------------------------------");
     }
 
-    public void subirEDesce() {
+    public void operandoElevador() {
         System.out.println("Para subir digite [S]: ");
         String subirAndar = scan.nextLine().toUpperCase();
-        if (!subirAndar.equals("S") || andarAtual == totalAndares) {
-            return;
-        }
-        subirAndar();
+        if (subirAndar.equals("S") && andarAtual != totalAndares) {
+            subirAndar();
 
-        do {
-            System.out.println("Deseja [DESCER] o andar ou [SAIR] do elevador ?");
-            String descerAndar = scan.nextLine().toUpperCase();
+            do {
+                System.out.println("Deseja [DESCER] o andar ou [SAIR] do elevador ?");
+                String descerSubirAndar = scan.nextLine().toUpperCase();
 
-            if (descerAndar.equals("DESCER")) {
-                desceAndar();
-            }
-
-            if (andarAtual == terreo) {
-
-                while (!pessoas.isEmpty()) {
-                    System.out.println("Deseja sair? [S] ou [N]");
-                    String sair = scan.nextLine().toUpperCase();
-
-                    if (sair.equals("S")) {
-                        sai();
-                    } else if (andarAtual == terreo) {
-                        subirAndar();
-                    } else {
-                        desceAndar();
-                    }
+                if (descerSubirAndar.equals("DESCER")) {
+                    desceAndar();
                 }
 
-            } else if (descerAndar.equals("SAIR")) {
-                sai();
-            }
+                if (andarAtual == terreo) {
 
-        } while (!pessoas.isEmpty());
+                    while (!pessoas.isEmpty()) {
+                        System.out.println("Deseja sair? [S] ou [N]");
+                        String sair = scan.nextLine().toUpperCase();
+
+                        if (sair.equals("S")) {
+                            sai();
+                        } else if (andarAtual == terreo) {
+                            subirAndar();
+                        } else {
+                            desceAndar();
+                        }
+                    }
+
+                } else if (descerSubirAndar.equals("SAIR")) {
+                    sai();
+                }
+
+            } while (!pessoas.isEmpty());
+        }
     }
 }

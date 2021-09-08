@@ -24,6 +24,8 @@ public class Pessoa {
 
     @Override
     public String toString() {
-        return this.nome + " " + this.getIdade() + " anos " + "Altura: " + this.altura;
+        return "Nome: '" + nome + '\'' +
+                ", Idade: " + getIdade() + " anos" +
+                ", altura: " + altura;
     }
 }
