@@ -11,7 +11,7 @@ public class Selecao extends Controle {
         caminhoes.add(new Caminhao(tipo, quantidadePluviometro, capacidadePluviometro));
     }
 
-    private static void criarCaminhao() {
+    private static void cadastroCaminhao() {
         System.out.println("Digite o tipo do caminhão (Alfa ou Beta): ");
         String tipoCaminhao = leString();
         System.out.println("Digite o Número de pluviômetro a ser transportados: ");
@@ -26,7 +26,7 @@ public class Selecao extends Controle {
         caminhoes.forEach(System.out::println);
     }
     
-    private static double caminhaMaiorCapacidade() {
+    private static double caminhaoMaiorCapacidade() {
         double caminhaoMaiorCapacidade = 0;
         for (Caminhao caminhao : caminhoes) {
             if(caminhao.getCargaCaminhao() > caminhaoMaiorCapacidade) {
@@ -37,14 +37,10 @@ public class Selecao extends Controle {
     }
 
     private static void caminhaoApto() {
-        for (Caminhao caminhao : caminhoes) {
-            if (caminhao.getCargaCaminhao() == caminhaMaiorCapacidade()) {
-                System.out.println(caminhao);
-            }
-        }
+        caminhoes.stream()
+        .filter(caminhao -> caminhao.getCargaCaminhao() == caminhaoMaiorCapacidade())
+        .forEach(System.out::println);
     }
-
-    
 
     public static void menu()  {
         int opcaoSelecionada;
@@ -60,7 +56,7 @@ public class Selecao extends Controle {
             System.out.println("\n");
             switch (opcaoSelecionada) {
                 case 1:
-                    criarCaminhao();
+                    cadastroCaminhao();
                     break;
                 case 2: listaDeCaminhoes();
                     break;
