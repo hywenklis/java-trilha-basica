@@ -12,8 +12,4 @@ public class Controle {
     public static int leInteiro() {
         return scan.nextInt();
     }
-
-    public static double leDouble() {
-        return scan.nextDouble();
-   }
 }

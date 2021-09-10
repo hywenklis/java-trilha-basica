@@ -1,29 +1,25 @@
 package exercicio5;
-
 public class Caminhao extends Pluviometro {
 
+    private final String tipoCaminhao;
+    private int cargaCaminhao;
 
-    private final String tipo;
-    private double cargaCaminhao;
-
-    public Caminhao(String tipo, int quantidadePluviometro, double capacidadePluviometro) {
-        this.tipo = tipo;
+    public Caminhao(String tipo, int quantidadePluviometro, String tipoPluviometro) {
+        this.tipoCaminhao = tipo;
         this.quantidadePluviometro = quantidadePluviometro;
-        this.capacidadePluviometro = capacidadePluviometro;
-        this.cargaCaminhao += quantidadePluviometro * capacidadePluviometro;
+        this.tipoPluviometro = tipoPluviometro;
     }
 
-    public double getCargaCaminhao() {
-        return cargaCaminhao;
+    public int getCargaCaminhao() {
+        return cargaCaminhao = quantidadePluviometro;
     }
 
     @Override
     public String toString() {
-        return "Caminhao{" +
-                "tipo='" + tipo + '\'' +
-                ", quantidadePluviometro=" + quantidadePluviometro +
-                ", cargaCaminhao=" + cargaCaminhao +
-                ", capacidadePluviometro=" + capacidadePluviometro +
+        return "CAMINHÃO{" +
+                "TIPO = '" + tipoCaminhao + '\'' +
+                ", PLUVIÔMETRO TRANSPORTADO = " + quantidadePluviometro +
+                ", TIPO DO PLUVIÔMETRO = " + tipoPluviometro +
                 '}';
     }
 }

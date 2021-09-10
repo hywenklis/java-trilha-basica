@@ -7,22 +7,22 @@ public class Selecao extends Controle {
 
     private static final List<Caminhao> caminhoes = new ArrayList<>();
 
-    private static void adicionaCaminhao(String tipo, int quantidadePluviometro, double capacidadePluviometro) {
-        caminhoes.add(new Caminhao(tipo, quantidadePluviometro, capacidadePluviometro));
+    private static void adicionaCaminhao(String tipoCaminhao, int quantidadePluviometro, String tipoPluviometro) {
+        caminhoes.add(new Caminhao(tipoCaminhao, quantidadePluviometro, tipoPluviometro));
     }
 
     private static void cadastroCaminhao() {
         System.out.println("Digite o tipo do caminhão (Alfa ou Beta): ");
         String tipoCaminhao = leString();
-        System.out.println("Digite o Número de pluviômetro a ser transportados: ");
+        System.out.println("Digite a quantidade de pluviômetro a ser transportado: ");
         int quantidadePluviometro = leInteiro();
-        System.out.println("Digite a capacidade do pluviômetro a ser transportados: ");
-        double capacidadePluviometro = leDouble();
+        System.out.println("Digite o tipo de pluviômetro a ser transportado (Manual ou Digital): ");
+        String tipoPluviometro = leString();
 
-        adicionaCaminhao(tipoCaminhao,quantidadePluviometro, capacidadePluviometro);
+        adicionaCaminhao(tipoCaminhao,quantidadePluviometro, tipoPluviometro);
     }
 
-    private static void listaDeCaminhoes() {
+    private static void listaDeCaminhoesCadastrados() {
         caminhoes.forEach(System.out::println);
     }
     
@@ -47,8 +47,8 @@ public class Selecao extends Controle {
         do {
             System.out.println("--------------CADASTRO DE CAMINHÃO----------------- ");
             System.out.println("0. Terminar");
-            System.out.println("1. Registrar Caminhão");
-            System.out.println("2. Lista de Caminhões Registrados");
+            System.out.println("1. Cadastrar Caminhão");
+            System.out.println("2. Caminhões Cadastrados");
             System.out.println("3. Caminhão Apto");
             System.out.print("Escolha uma opção: ");
             opcaoSelecionada = leInteiro();
@@ -58,7 +58,7 @@ public class Selecao extends Controle {
                 case 1:
                     cadastroCaminhao();
                     break;
-                case 2: listaDeCaminhoes();
+                case 2: listaDeCaminhoesCadastrados();
                     break;
                 case 3: caminhaoApto();
                     break;
