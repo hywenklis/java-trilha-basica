@@ -1,5 +1,4 @@
 package exercicio5;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -69,4 +68,3 @@ public class Selecao extends Controle {
         System.out.println("Sistema finalizado!");
     }
 }
-
