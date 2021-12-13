@@ -27,7 +27,7 @@ public class Pilha {
     }
     
     public boolean isEmpty() {
-        return refNoEntradaPilha == null ? true : false;
+        return refNoEntradaPilha == null;
     }
 
     public String toString() {
