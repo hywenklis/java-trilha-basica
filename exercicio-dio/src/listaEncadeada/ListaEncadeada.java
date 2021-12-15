@@ -2,7 +2,7 @@ package listaEncadeada;
 
 public class ListaEncadeada<T> {
     
-    No<T> referenciaEntrada;
+    private No<T> referenciaEntrada;
     
     public ListaEncadeada() {
         this.referenciaEntrada = null;
@@ -16,7 +16,7 @@ public class ListaEncadeada<T> {
         }
 
         No<T> noAuxiliar = referenciaEntrada;
-        for (int i = 0; i < this.size(); i++) {
+        for (int i = 0; i < this.size() - 1; i++) {
             noAuxiliar = noAuxiliar.getProximoNo();
         }
 
@@ -24,7 +24,7 @@ public class ListaEncadeada<T> {
     }
 
     public boolean isEmpty() {
-        return referenciaEntrada == null ? true : false;
+        return referenciaEntrada == null;
     }
 
     public T get(int indice) {
@@ -38,7 +38,7 @@ public class ListaEncadeada<T> {
         No<T> noAuxiliar = referenciaEntrada;
         No<T> noRetorno = null;
 
-        for (int i = 0; i < this.size()-1; i++) {
+        for (int i = 0; i <= indice; i++) {
             noRetorno = noAuxiliar;
             noAuxiliar = noAuxiliar.getProximoNo();
         }
@@ -89,7 +89,7 @@ public class ListaEncadeada<T> {
     }
 
     public void validaIndice(int indice) {
-        if (indice >- size()) {
+        if (indice >= size()) {
             int ultimoIndice = size() - 1;
             throw new IndexOutOfBoundsException("Não existe conteudo no indice " + indice + " desta lista. Esta lista só vai até o indice " + ultimoIndice + ".");
         }
