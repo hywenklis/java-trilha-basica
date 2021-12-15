@@ -27,6 +27,10 @@ public class ListaEncadeada<T> {
         return referenciaEntrada == null ? true : false;
     }
 
+    public T get(int indice) {
+        return getNo(indice).getConteudo();
+    }
+
     private No<T> getNo(int indice) {
 
         validaIndice(indice);
@@ -39,6 +43,18 @@ public class ListaEncadeada<T> {
             noAuxiliar = noAuxiliar.getProximoNo();
         }
         return noRetorno;
+    }
+
+    public T remove(int indice) {
+        No<T> noPivor = this.getNo(indice);
+        if (indice == 0) {
+            referenciaEntrada = noPivor.getProximoNo();
+            return noPivor.getConteudo();
+        }
+
+        No<T> noAnterior = getNo(indice - 1);
+        noAnterior.setProximoNo(noPivor.getProximoNo());
+        return noPivor.getConteudo();
     }
 
     public int size() {
