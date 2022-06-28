@@ -1,8 +1,10 @@
-package org.estudo;
+package org.estudo.exercicio01;
 
 import java.util.Scanner;
 
-public class CalculeValueMoney {
+public class CalculateValueMoney {
+
+
 
     public static void main(String[] args) {
 
@@ -13,10 +15,6 @@ public class CalculeValueMoney {
 
         System.out.println("Digite o valor do cliente: ");
         Double valueClient = scan.nextDouble();
-
-        double result = valueClient - productValue;
-
-        System.out.println("Troco: " + result);
 
         scan.close();
     }
